@@ -1,0 +1,174 @@
+aid: rockstar-games
+name: Rockstar Games
+description: >-
+  Rockstar Games is an American video game publisher headquartered in New York City and a wholly-owned subsidiary of Take-Two
+  Interactive Software (NASDAQ: TTWO). Best known for the Grand Theft Auto and Red Dead Redemption franchises, Rockstar
+  operates online services for GTA Online and Red Dead Online, the Rockstar Games Launcher PC client, and the legacy
+  Rockstar Games Social Club identity / authentication platform. Rockstar does not publish a public developer portal; its
+  HTTP API surface is internal and consumed only by first-party clients (game executables, the Rockstar Games Launcher,
+  and Rockstar's mobile companion apps). The most visible public-facing API is its OpenID Connect / OAuth 2.0 identity
+  provider at signin.rockstargames.com, which exposes standard /connect/authorize, /connect/Token, /connect/introspect,
+  and /.well-known/jwks endpoints. Grand Theft Auto VI is scheduled to launch on November 19, 2026 for PlayStation 5 and
+  Xbox Series X/S and will include a "significant online mode" succeeding GTA Online.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Gaming
+  - Entertainment
+  - Video Games
+  - Grand Theft Auto
+  - Red Dead Redemption
+  - Identity
+  - OAuth
+url: https://raw.githubusercontent.com/api-evangelist/rockstar-games/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: rockstar-games:signin-oidc
+    name: Rockstar Games Sign-In (OpenID Connect)
+    description: >-
+      Public OpenID Connect / OAuth 2.0 identity provider operated by Rockstar Games at signin.rockstargames.com. Backs
+      authentication for the Rockstar Games website, Rockstar Games Launcher, Social Club, Rockstar Newswire, and
+      first-party mobile apps. Supports the authorization_code, client_credentials, and refresh_token grant types and
+      exposes /connect/authorize, /connect/Token, /connect/introspect, and a JSON Web Key Set at /.well-known/jwks.
+      Appears to be implemented on an IdentityServer-style stack. Client registration is not open to third parties; only
+      Rockstar-issued client IDs (e.g. the Launcher, Social Club, Newswire) are accepted.
+    humanURL: https://signin.rockstargames.com/
+    baseURL: https://signin.rockstargames.com
+    tags:
+      - Authentication
+      - Identity
+      - OAuth
+      - OpenID Connect
+      - Single Sign-On
+    properties:
+      - type: AuthorizationEndpoint
+        url: https://signin.rockstargames.com/connect/authorize
+      - type: TokenEndpoint
+        url: https://signin.rockstargames.com/connect/Token
+      - type: IntrospectionEndpoint
+        url: https://signin.rockstargames.com/connect/introspect
+      - type: JWKS
+        url: https://signin.rockstargames.com/.well-known/jwks
+  - aid: rockstar-games:social-club
+    name: Rockstar Games Social Club
+    description: >-
+      Rockstar's online authentication and player-services backbone originally launched in 2008 to back GTA IV and later
+      every major Rockstar title. Provides player accounts, friends, Crews, multiplayer matchmaking, achievements/awards,
+      job sharing, Snapmatic photos, and the GTA Online / Red Dead Online stat back-ends. Per Wikipedia, "Most branding
+      relating to Social Club was removed from Rockstar's website by November 2023" — the service has been folded into
+      the unified Rockstar Games account, though its internal HTTP APIs (commonly observed under scapi.rockstargames.com
+      and prod.cloud.rockstargames.com) continue to power live-service titles. No public developer documentation or
+      third-party client credentials are offered.
+    humanURL: https://www.rockstargames.com/
+    baseURL: https://scapi.rockstargames.com
+    tags:
+      - Social Club
+      - Player Accounts
+      - Crews
+      - Multiplayer
+      - Live Service
+    properties:
+      - type: Documentation
+        url: https://www.rockstargames.com/
+      - type: Authentication
+        url: https://signin.rockstargames.com/
+  - aid: rockstar-games:gta-online
+    name: Grand Theft Auto Online Services
+    description: >-
+      Live-service back-end for Grand Theft Auto Online, the persistent multiplayer mode shipped with Grand Theft Auto V
+      in 2013 and now running on PlayStation 4/5, Xbox One/Series X|S, and PC. Powers matchmaking, session migration,
+      in-game economy, Shark Card / GTA dollar entitlements, weekly content drops, stats, and the GTA+ subscription on
+      current-gen consoles. The service is consumed only by the game client and the Rockstar Games Launcher; no public
+      REST/GraphQL surface is exposed for third-party developers.
+    humanURL: https://www.rockstargames.com/gta-online
+    baseURL: https://prod.cloud.rockstargames.com
+    tags:
+      - GTA Online
+      - Grand Theft Auto V
+      - Live Service
+      - Multiplayer
+      - Subscriptions
+    properties:
+      - type: Website
+        url: https://www.rockstargames.com/gta-online
+      - type: Subscription
+        url: https://www.rockstargames.com/gta-online/gta-plus
+  - aid: rockstar-games:red-dead-online
+    name: Red Dead Online Services
+    description: >-
+      Live-service back-end for Red Dead Online, the persistent multiplayer mode shipped with Red Dead Redemption 2 in
+      2018. Provides matchmaking, character/posse data, in-game economy (Gold Bars), Outlaw Pass / role progression, and
+      seasonal content delivery. Rockstar announced in 2022 that major content updates have been wound down so engineering
+      resources can focus on GTA VI; the multiplayer service itself remains operational. No public developer surface.
+    humanURL: https://www.rockstargames.com/reddeadonline
+    baseURL: https://prod.cloud.rockstargames.com
+    tags:
+      - Red Dead Online
+      - Red Dead Redemption 2
+      - Live Service
+      - Multiplayer
+    properties:
+      - type: Website
+        url: https://www.rockstargames.com/reddeadonline
+  - aid: rockstar-games:launcher
+    name: Rockstar Games Launcher
+    description: >-
+      Rockstar's first-party PC storefront and game launcher, distributing Grand Theft Auto V, Red Dead Redemption 2,
+      L.A. Noire, Bully, Max Payne 3, the GTA and Midnight Club catalog, and Rockstar-published indies. Handles install,
+      patching, cloud saves, friends list, and entitlement checks against the Rockstar account. The Launcher consumes
+      Rockstar's internal HTTP APIs and the signin.rockstargames.com OIDC provider; it is not itself an API product.
+    humanURL: https://www.rockstargames.com/games/rockstar-games-launcher
+    baseURL: https://prod.cloud.rockstargames.com
+    tags:
+      - Launcher
+      - PC
+      - Storefront
+      - Entitlements
+    properties:
+      - type: Download
+        url: https://www.rockstargames.com/games/rockstar-games-launcher
+      - type: Authentication
+        url: https://signin.rockstargames.com/
+  - aid: rockstar-games:gta-vi
+    name: Grand Theft Auto VI (Forthcoming)
+    description: >-
+      The next mainline Grand Theft Auto title and the most anticipated entertainment launch of 2026. Per Wikipedia,
+      "Following several delays, it is scheduled to be released on 19 November 2026 for the PlayStation 5 and Xbox Series
+      X/S." GTA VI is expected to ship with "a significant online mode" succeeding GTA Online. The online service surface
+      has not yet been disclosed; it is widely expected to extend Rockstar's existing scapi / prod.cloud back-end and
+      reuse the signin.rockstargames.com OIDC provider for player authentication.
+    humanURL: https://www.rockstargames.com/VI
+    baseURL: https://prod.cloud.rockstargames.com
+    tags:
+      - GTA VI
+      - Grand Theft Auto
+      - Forthcoming
+      - Live Service
+      - 2026
+    properties:
+      - type: Website
+        url: https://www.rockstargames.com/VI
+common:
+  - type: Website
+    url: https://www.rockstargames.com
+  - type: Newswire
+    url: https://www.rockstargames.com/newswire
+  - type: Support
+    url: https://support.rockstargames.com/
+  - type: Authentication
+    url: https://signin.rockstargames.com/
+  - type: ParentCompany
+    url: https://www.take2games.com/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/rockstar-games
+  - type: GitHubOrganization
+    url: https://github.com/rockstar-games
+  - type: TermsOfService
+    url: https://www.rockstargames.com/legal
+  - type: PrivacyPolicy
+    url: https://www.rockstargames.com/privacy
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
