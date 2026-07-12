@@ -153,6 +153,10 @@ apis:
   - type: Website
     url: https://www.rockstargames.com/VI
 common:
+- type: VulnerabilityDisclosure
+  url: security/rockstar-games-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/rockstar-games-domain-security.yml
 - type: Website
   url: https://www.rockstargames.com
 - type: Newswire
