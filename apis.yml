@@ -30,6 +30,14 @@ tags:
   - Grand Theft Auto
   - Red Dead Redemption
   - Identity
+  - Authentication
+tags_raw:
+  - Gaming
+  - Entertainment
+  - Video Games
+  - Grand Theft Auto
+  - Red Dead Redemption
+  - Identity
   - OAuth
 url: https://raw.githubusercontent.com/api-evangelist/rockstar-games/refs/heads/main/apis.yml
 created: '2026-05-23'
@@ -48,6 +56,11 @@ apis:
     humanURL: https://signin.rockstargames.com/
     baseURL: https://signin.rockstargames.com
     tags:
+      - Authentication
+      - Identity
+      - OpenID Connect
+      - Single Sign-On
+    tags_raw:
       - Authentication
       - Identity
       - OAuth
