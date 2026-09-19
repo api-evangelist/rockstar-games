@@ -70,7 +70,7 @@ apis:
       - Authentication
       - Identity
       - OpenID Connect
-      - Single Sign-On
+      - SSO
     tags_raw:
       - Authentication
       - Identity
