@@ -86,8 +86,6 @@ apis:
         url: https://signin.rockstargames.com/connect/introspect
       - type: JWKS
         url: https://signin.rockstargames.com/.well-known/jwks
-      - url: graphql/rockstar-games-graphql.md
-        type: GraphQL
   - aid: rockstar-games:social-club
     name: Rockstar Games Social Club
     description: >-
