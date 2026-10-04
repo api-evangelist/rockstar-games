@@ -1,21 +1,19 @@
-# Kin Score artifact — rockstar-games — 2026-08-25T154045
+# Kin Score artifact — rockstar-games — 2026-09-25T232841
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: rockstar-games
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T154045
-  composite: 12.4
+  schema_version: 0.23.0
+  scored_at: '2026-09-25'
+  run_ts: 2026-09-25T232841
+  composite: 15.6
   band: emerging
   facets:
-    discoverability: 74.1
+    discoverability: 71.4
     contract_quality: 0.0
-    governance: 0.0
-    operational_transparency: 2.6
-    developer_ergonomics: 2.4
-    commercial_clarity: 21.1
     contract_governance: 0.0
+    operational_transparency: 2.6
+    developer_ergonomics: 11.9
     access_clarity: 21.1
   agent_readiness:
     score: 2.5
@@ -40,3 +38,9 @@ kin_score:
       protected_resource_metadata: false
       dynamic_client_registration: false
       agentic_commerce: false
+  regulatory:
+    applies: true
+    regime: Horizontal (data, software, accessibility, platform)
+    regime_id: horizontal
+    score: 25.5
+    matched_via: fallback
